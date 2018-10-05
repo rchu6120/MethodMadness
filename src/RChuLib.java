@@ -10,9 +10,9 @@ public class RChuLib {
     }
 
     public static String dateStr(String date) {
-        String month = date.substring(0,2);
-        String day = date.substring(3,5);
-        String year = date.substring(6,10);
+        String month = date.substring(0, 2);
+        String day = date.substring(3, 5);
+        String year = date.substring(6, 10);
         return day + "-" + month + "-" + year;
     }
 
@@ -22,14 +22,25 @@ public class RChuLib {
           if (subStr)
       }
     }
-*/
-    public static void printFibonnaci (int n) {
+    */
+    public static boolean printFibonnaci(int n) {
         int num1 = 0;
         int num2 = 1;
         while (num1 + num2 < n) {
-            System.out.println(num1+num2);
-            num1 = num2;
-            num2 = num1 + num2;
+                num1 = num2;
+                num2 = num1 + num2;
+                if (num1 + num2 == n) {
+                    return true;
+            }
         }
+        return false;
+    }
+
+    public static int sumUpTo(int n) {
+        int sum = 0;
+        for (int i = 0; i <= n; i++) {
+            sum = sum + i;
+        }
+        return sum;
     }
 }
