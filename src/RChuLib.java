@@ -1,7 +1,7 @@
 public class RChuLib {
 
     public static boolean isPalindrome(String word) {
-        for (int i = 0; i < word.length() / 2; i++) {
+        for (int i = 0; i < word.length()/2; i++) {
             if (word.charAt(i) != word.charAt(word.length() - i - 1)) {
                 return false;
             }
@@ -16,24 +16,19 @@ public class RChuLib {
         return day + "-" + month + "-" + year;
     }
 
-    /*
-    public static String cutOut(String mainStr,String subStr) {
-      for (int i=0; i <= mainStr.length()-1; i++) {
-          if (subStr)
-      }
-    }
-    */
-    public static boolean printFibonnaci(int n) {
+    public static boolean isFibonnaci(int n) {
         int num1 = 0;
         int num2 = 1;
-        while (num1 + num2 < n) {
+        while (num1 + num2 <= n) {
+            if (num1 + num2 == n) {
+                return true;
+            } else {
+                int num3 = num1;
                 num1 = num2;
-                num2 = num1 + num2;
-                if (num1 + num2 == n) {
-                    return true;
+                num2 = num3 + num2;
             }
         }
-        return false;
+            return false;
     }
 
     public static int sumUpTo(int n) {
@@ -42,5 +37,18 @@ public class RChuLib {
             sum = sum + i;
         }
         return sum;
+    }
+
+    public static void primePrinter (int n) {
+        if (n == 2) {
+            System.out.println(2);
+        }
+        for (int x=3; x <= n; x++) {
+            for (int i=2; i <=9; i++) {
+                if (x%i != 0) {
+                    System.out.println(x);
+                }
+            }
+        }
     }
 }
